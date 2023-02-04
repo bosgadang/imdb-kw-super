@@ -21,7 +21,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get(`http://www.omdbapi.com/?apikey=46e6b1ec&s=${search || 'harry'}`)
+      .get(`https://www.omdbapi.com/?apikey=46e6b1ec&s=${search || 'harry'}`)
       .then((response) => {
         setMovies(response.data.Search);
       })
@@ -37,7 +37,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get('http://www.omdbapi.com/?apikey=46e6b1ec&y=2022&s=harry')
+      .get('https://www.omdbapi.com/?apikey=46e6b1ec&y=2022&s=harry')
       .then((response) => {
         setFavorites(response.data.Search);
       })
@@ -106,7 +106,7 @@ export default function Home() {
                     type="button"
                     onClick={async () => {
                       const res = await axios.get(
-                        `http://www.omdbapi.com/?apikey=46e6b1ec&i=${favorite.imdbID}`
+                        `https://www.omdbapi.com/?apikey=46e6b1ec&i=${favorite.imdbID}`
                       );
                       console.log(res.data);
 
@@ -189,7 +189,7 @@ export default function Home() {
                     type="button"
                     onClick={async () => {
                       const res = await axios.get(
-                        `http://www.omdbapi.com/?apikey=46e6b1ec&i=${movie.imdbID}`
+                        `https://www.omdbapi.com/?apikey=46e6b1ec&i=${movie.imdbID}`
                       );
                       console.log(res.data);
 
